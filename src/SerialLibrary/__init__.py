@@ -529,7 +529,7 @@ class SerialLibrary:
         if terminator != LF:
             terminator = self._encode(terminator)
         return self._decode(
-            self._port(port_locator).read_until(terminator=terminator, size=size),
+            self._port(port_locator).read_until(expected=terminator, size=size),
             encoding)
 
     def port_should_have_unread_bytes(self, port_locator=None):
